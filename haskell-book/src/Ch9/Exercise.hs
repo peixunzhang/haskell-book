@@ -196,8 +196,8 @@ squishAgain xs = squishMap id xs
 
 --8. myMaximumBy takes a comparison function and a list and returns the greatest element
 myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
-myMaximumBy f [] = error "non"
-myMaximumBy f (x : []) = x
+myMaximumBy _ [] = error "non"
+myMaximumBy _ (x : []) = x
 myMaximumBy f (x : xs) = case f x big of
   GT -> x
   LT -> big
@@ -207,8 +207,8 @@ myMaximumBy f (x : xs) = case f x big of
 
 --9. myMinimumBy takes a comparison function and a list and returns the least element of the list based on the last value that the comparison returned LT for.
 myMinimumBy :: (a -> a -> Ordering) -> [a] -> a
-myMinimumBy f [] = error "non"
-myMinimumBy f (x : []) = x
+myMinimumBy _ [] = error "non"
+myMinimumBy _ (x : []) = x
 myMinimumBy f (x : xs) = case f x small of
   GT -> small
   LT -> x
